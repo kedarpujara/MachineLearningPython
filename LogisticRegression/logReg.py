@@ -32,7 +32,6 @@ def LogisticReg():
 
 
 	#---Get rid/adjust the values we are not interested in---#
-
 	titTrain['Age'] = titTrain[['Age','Pclass']].apply(impute_age,axis=1)
 
 	#sns.heatmap(titTrain.isnull(), yticklabels=False, cbar=False)
@@ -56,7 +55,6 @@ def LogisticReg():
 
 	x_train, x_test, y_train, y_test = train_test_split(X,y, test_size=0.3, 
 		random_state=101)
-
 
 	from sklearn.linear_model import LogisticRegression
 	
