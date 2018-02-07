@@ -1,0 +1,7 @@
+- Overall goal is to divide data into distinct groups such that observations within each group are similar 
+- Choose k clusters
+- Unsupervised algorithm 
+- Algorithm randomly assigns each observation to a cluster, finds the centroid of each cluster
+- Next step is to reassign each data point to the closest centroid
+- Affter that, calaculate the new centroid of each cluster
+- Repeat until cluster variation cant be reduced 
