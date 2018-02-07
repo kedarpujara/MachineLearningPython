@@ -1,0 +1,5 @@
+- unsupervised learning algorithm 
+- aims to explain data sets and interrelations among variables to identify the underlying structure of the variables
+- determines orthogonal lines from the regression line 
+- all perpandicular to each other in n-dimensional space
+- #dimensions = #variables 
