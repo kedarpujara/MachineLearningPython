@@ -1,0 +1,4 @@
+- two most common types are content based (CB) and collaborative filtering (CF)
+- CF -> recommendations based on knowledge of users attitude to items. More used (e.g. Amazon)
+- CB -> focus on attributes of itesm and recommnedations based on similarity between them 
+- CF can be divided into memory-based CF and model-based CF
