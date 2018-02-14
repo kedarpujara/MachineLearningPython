@@ -35,7 +35,7 @@ def YelpNLP():
 	pipeline.fit(x_train, y_train)
 	predictions = pipeline.predict(x_test)
 
-	print(classification_report(y_test, predictions))
+	print(classification_report(y_test, predictions))s
 
 
 	#print(yelp.corr())
