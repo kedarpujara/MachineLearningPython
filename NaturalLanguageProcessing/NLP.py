@@ -1,17 +1,4 @@
-import pandas as pd 
-import seaborn as sns 
-import matplotlib.pyplot as plt 
-import numpy as np 
-import string
-import nltk
-from nltk.corpus import stopwords
-from sklearn.feature_extraction.text import CountVectorizer
-from sklearn.feature_extraction.text import TfidfTransformer
-from sklearn.naive_bayes import MultinomialNB
-from sklearn.model_selection import train_test_split
-from sklearn.pipeline import Pipeline 
-from sklearn.metrics import classification_report
-
+	
 
 
 
