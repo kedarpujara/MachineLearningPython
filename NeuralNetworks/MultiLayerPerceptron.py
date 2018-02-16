@@ -4,19 +4,25 @@ import matplotlib.pyplot as plt
 import numpy as np 
 import seaborn as sns 
 
-
+# Dataset (numbers from 1-10)
 mnist = input_data.read_data_sets("/tmp/data", one_hot=True)
 n_samples = mnist.train.num_examples
 
+
+# Establishing learning rates and epochs
 learning_rate = 0.001
 training_epochs = 15 
 batch_size = 100
 
+# Establish the values for hidden layers. Input is 784 because images are 28x28 pixels
+# and we want to output 10 classes, representing the numbers 1-10
 n_hidden_1 = 256
 n_hidden_2 = 256
 n_input = 784
 n_classes = 10
 
+
+# Establish the weights between each layer
 weights = {
 	'h1': tf.Variable(tf.random_normal([n_input, n_hidden_1])),
 	'h2': tf.Variable(tf.random_normal([n_hidden_1, n_hidden_2])),
@@ -24,19 +30,22 @@ weights = {
 
 }
 
+
+# Establish the biases between each layer
 biases = {
 	'b1': tf.Variable(tf.random_normal([n_hidden_1])),
 	'b2': tf.Variable(tf.random_normal([n_hidden_2])),
 	'out': tf.Variable(tf.random_normal([n_classes]))
 }
 
-
+# Core of the actual Multilayer Perceptron 
 def MLP():
 	x = tf.placeholder("float",  [None, n_input])
 	y = tf.placeholder("float", [None, n_classes])
 
 	pred = MLPLayerSetup(x, weights, biases)
 
+	# Setting up the cost function
 	cost = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(logits=pred, labels=y))
 	optimizer = tf.train.AdamOptimizer(learning_rate=learning_rate).minimize(cost)
 
@@ -48,9 +57,7 @@ def MLP():
 	plt.show()
 
 
-
 	#Running the Session 
-
 	init = tf.initialize_all_variables()
 	sess = tf.InteractiveSession()
 
@@ -84,6 +91,7 @@ def MLP():
 
 
 
+# Setup for the actual perceptron with all three layers, weights, and biases
 def MLPLayerSetup(x, weights, biases):
 	layer_1 = tf.add(tf.matmul(x, weights['h1']), biases['b1'])
 	layer_1 = tf.nn.relu(layer_1)
